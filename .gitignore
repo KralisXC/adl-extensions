@@ -1,0 +1,6 @@
+# 打包产物
+/dist
+
+# 扩展里的大二进制（ffmpeg 67 MB）不进仓库，只随 Release 的 zip 分发。
+# 本地要用 build.ps1 -Id ... 打包时，把 bin/ 从别处拷进来即可。
+/plugins/*/bin/

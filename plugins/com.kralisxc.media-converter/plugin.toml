@@ -1,0 +1,43 @@
+id = "com.kralisxc.media-converter"
+name = "本地媒体转换"
+description = "下载完的视频/音频就地无损封装成 MP4 或抽出音轨，不重编码、不掉画质。"
+version = "1.0.0"
+api_version = 1
+entry = "main.js"
+kind = "quickjs"
+
+# 这些能力都只在 trusted 模式下真正放行：
+#   exec     —— 调 ffmpeg
+#   fs_read  —— 探输出文件是否重名
+#   fs_write —— 写转换结果
+# safe 模式下按钮根本不显示（ui.collect 只在 trusted 时输出 actions），
+# 所以不会出现"点得动但干不了"的尴尬。
+[permissions]
+exec = true
+notify = true
+# `"*"` = 任意路径。媒体插件的输入输出都在用户自己选的目录里，
+# 写死前缀等于没法用；它已经要了 exec（能跑任意程序），
+# 再拿路径白名单当边界没有意义。
+fs_read = ["*"]
+fs_write = ["*"]
+
+[limits]
+timeout_ms = 5000
+memory_mb = 64
+
+# 动作入口也要在 [[hooks]] 里声明，否则 active_hooks 里没有它，
+# 插件页会显示"这个插件没挂任何 hook"。
+[[hooks]]
+point = "onAction"
+priority = 60
+
+# place = "task" → 出现在任务行的「⋯」菜单里，作用于这一个任务的产物。
+[[ui.actions]]
+id = "to-mp4"
+label = "无损转 MP4"
+place = "task"
+
+[[ui.actions]]
+id = "extract-audio"
+label = "提取音轨（m4a）"
+place = "task"
