@@ -1,16 +1,16 @@
 {
-  "api_version": 1,
-  "plugins": [
-    {
-      "id": "com.kralisxc.media-converter",
-      "name": "\u672c\u5730\u5a92\u4f53\u8f6c\u6362",
-      "version": "1.0.0",
-      "description": "\u4e0b\u8f7d\u5b8c\u7684\u89c6\u9891/\u97f3\u9891\u5c31\u5730\u65e0\u635f\u5c01\u88c5\u6210 MP4\uff0c\u6216\u62bd\u51fa\u97f3\u8f68\u6210 m4a\u3002\u53ea\u505a -c copy\uff0c\u4e0d\u91cd\u7f16\u7801\u3002",
-      "zip": "https://github.com/KralisXC/adl-extensions/releases/download/media-converter-v1.0.0/com.kralisxc.media-converter-1.0.0.zip",
-      "sha256": "434614a4cf8b1d9dbfadab129bab0d975ff2c829a54249ab3d69d2ab4d5660e0",
-      "size_mb": 29.28,
-      "min_api": 1,
-      "needs_trusted": true
-    }
-  ]
+    "api_version":  1,
+    "plugins":  [
+                    {
+                        "id":  "com.kralisxc.media-converter",
+                        "name":  "本地媒体转换",
+                        "version":  "1.0.0",
+                        "description":  "下载完的视频/音频就地无损封装成 MP4，或抽出音轨成 m4a。只做 -c copy，不重编码。",
+                        "zip":  "https://github.com/KralisXC/adl-extensions/releases/download/media-converter-v1.0.0/com.kralisxc.media-converter-1.0.0.zip",
+                        "sha256":  "5da9f6ed3cd00f1dbd2830ae31e7a0aa7dcf2bd8a4739b99f97cbe812c86798f",
+                        "size_mb":  29.28,
+                        "min_api":  1,
+                        "needs_trusted":  true
+                    }
+                ]
 }
